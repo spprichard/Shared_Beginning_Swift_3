@@ -2,4 +2,11 @@
 
 import UIKit
 
-var str = "Hello, playground"
+/* Intermediate Swift */
+
+
+/////////////////////
+////// Closures /////
+/////////////////////
+
+
