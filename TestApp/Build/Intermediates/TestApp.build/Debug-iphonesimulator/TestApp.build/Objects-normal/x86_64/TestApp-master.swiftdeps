@@ -1,0 +1,6 @@
+version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
+options: "df0610c6c6d2c004b8be5d7d23a29082"
+build_time: [532744299, 113521000]
+inputs:
+  "/Users/StevenPrichard/Developer/Ray W/Beginning Swift 3/TestApp/TestApp/ViewController.swift": [532744296, 0]
+  "/Users/StevenPrichard/Developer/Ray W/Beginning Swift 3/TestApp/TestApp/AppDelegate.swift": [532742824, 0]
