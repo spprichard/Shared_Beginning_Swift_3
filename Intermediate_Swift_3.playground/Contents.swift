@@ -75,30 +75,30 @@
 ////// Structs //////
 /////////////////////
 
-struct Book {
-    var title : String
-}
-
-struct Author {
-    var firstName : String
-    var lastName : String
-    var books : [Book] = []
-    
-    mutating func addBook(aBook : Book) {
-        books.append(aBook)
-    }
-}
-
-var abook = Book(title: "The Stand")
-abook.title
-
-var writer = Author(firstName: "Stephen", lastName: "King", books: [abook])
-writer.books
-
-let anotherBook = Book(title: "The Gungslinger")
-
-writer.addBook(aBook: anotherBook)
-//print(writer.books)
+//struct Book {
+//    var title : String
+//}
+//
+//struct Author {
+//    var firstName : String
+//    var lastName : String
+//    var books : [Book] = []
+//    
+//    mutating func addBook(aBook : Book) {
+//        books.append(aBook)
+//    }
+//}
+//
+//var abook = Book(title: "The Stand")
+//abook.title
+//
+//var writer = Author(firstName: "Stephen", lastName: "King", books: [abook])
+//writer.books
+//
+//let anotherBook = Book(title: "The Gungslinger")
+//
+//writer.addBook(aBook: anotherBook)
+////print(writer.books)
 
 
 /*:
@@ -171,6 +171,52 @@ anotherShirt.calcPrice()
 //// Properties /////
 /////////////////////
 
+
+struct Book {
+    var title : String
+    var isPublished : Bool
+    
+}
+
+struct Author {
+    var firstName : String
+    var lastName : String
+    var booksWritten : [Book] = []
+    var booksBeingWritten : [Book] = []
+    var books : [Book] {
+        get {
+            return booksWritten
+        }
+    }
+    
+    var totalBooks : Int {
+        return booksBeingWritten.count + booksWritten.count
+    }
+    
+    mutating func addBook(aBook : Book) {
+        if aBook.isPublished {
+            booksWritten.append(aBook)
+        }
+        else{
+            booksBeingWritten.append(aBook)
+        }
+    }
+    
+}
+
+var abook = Book(title: "The Stand", isPublished: true)
+abook.title
+
+var writer = Author(firstName: "Stephen", lastName: "King", booksWritten : [abook], booksBeingWritten : [])
+writer.totalBooks
+
+let anotherBook = Book(title: "The Gungslinger", isPublished: true)
+
+writer.addBook(aBook: anotherBook)
+
+var someBook = Book(title: "Untitled Prject", isPublished: false)
+writer.addBook(aBook: someBook)
+print(writer.totalBooks)
 
 
 
