@@ -75,9 +75,98 @@
 ////// Structs //////
 /////////////////////
 
+struct Book {
+    var title : String
+}
+
+struct Author {
+    var firstName : String
+    var lastName : String
+    var books : [Book] = []
+    
+    mutating func addBook(aBook : Book) {
+        books.append(aBook)
+    }
+}
+
+var abook = Book(title: "The Stand")
+abook.title
+
+var writer = Author(firstName: "Stephen", lastName: "King", books: [abook])
+writer.books
+
+let anotherBook = Book(title: "The Gungslinger")
+
+writer.addBook(aBook: anotherBook)
+//print(writer.books)
 
 
-/////////////////////
-//// Structures /////
-/////////////////////
+/*:
+ #### Intermediate Swift Video Tutorial Series - raywenderlich.com
+ #### Video 3: Structures
+ 
+ **Note:** If you're seeing this text as comments rather than nicely-rendered text, select Editor\Show Rendered Markup in the Xcode menu.
+ */
+
+//: Create a T-shirt struct that has size, color and material options. The size prices go from 3, 5, 7. The colors range from red, blue, and white. It should range from 2, 3, and 1. Finally, for material options, choose regular or organic. It should be 5 or 10. Print out the result in calculatePrice()
+struct tShirt {
+    var size : Character
+    var color : String
+    var material : String
+    
+    func calcPrice() -> Int {
+        var value = 0
+        
+        switch size {
+        case "S":
+            value += 3
+        case "M":
+            value += 5
+        case "L":
+            value += 7
+        default:
+            ()
+        }
+        
+        switch color {
+        case "Red":
+            value += 2
+        case "Blue":
+            value += 3
+        case "White":
+            value += 1
+        default:
+            ()
+        }
+        
+        switch material {
+        case "Regular":
+            value += 5
+        case "Organic":
+            value += 10
+        default:
+            ()
+        }
+        
+        return value
+    }
+    
+}
+
+
+//: Here's an example of creating a struct:
+//: var tshirt = TShirt(size: "M", color: "red", material: "organic")
+var someShirt = tShirt(size: "L", color: "Red", material: "Organic")
+someShirt.calcPrice()
+
+
+var anotherShirt = tShirt(size: "L", color: "Blue", material: "Organic")
+anotherShirt.calcPrice()
+
+
+
+
+
+
+
 
