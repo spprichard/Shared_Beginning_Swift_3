@@ -262,32 +262,32 @@ import UIKit
  
  */
 
-struct Tshirt {
-    var size = ""
-    var color = ""
-}
-
-struct Address {
-    var street = ""
-    var city = ""
-    var zipCode = ""
-    
-}
-
-
-//class ShoppingCart {
-//    var shirts : [Tshirt]
-//    var user : User
-////    init() {
-////        //var shirts = [Tshirt]()
-////        //var user = User()
-////    }
+//struct Tshirt {
+//    var size = ""
+//    var color = ""
 //}
-class User {
-    var firstName = ""
-    var lastNmae = ""
-    var usersAddress = Address()
-}
+//
+//struct Address {
+//    var street = ""
+//    var city = ""
+//    var zipCode = ""
+//    
+//}
+//
+//
+////class ShoppingCart {
+////    var shirts : [Tshirt]
+////    var user : User
+//////    init() {
+//////        //var shirts = [Tshirt]()
+//////        //var user = User()
+//////    }
+////}
+//class User {
+//    var firstName = ""
+//    var lastNmae = ""
+//    var usersAddress = Address()
+//}
 
 //Solution:
 //
@@ -298,7 +298,95 @@ class User {
 
 
 
+/////////////////////
+//// Inheritance ////
+/////////////////////
 
+//struct Page {
+//    var word = 0
+//}
+//
+//class Story {
+//    var title = ""
+//    var pages : [Page] = []
+//    
+//    func addPage(page: Page) {
+//        pages.append(page)
+//    }
+//    
+//}
+//
+//class ShortStory : Story {
+//    var maxPageCount = 2
+//    
+//    override func addPage(page: Page) {
+//        if pages.count < maxPageCount{
+//            super.addPage(page: page)
+//        }
+//    }
+//}
+//
+//
+//var story = ShortStory()
+//story.title = "The Haunting of Hill House"
+//
+//story.addPage(page: Page(word: 300))
+//story.addPage(page: Page(word: 300))
+//story.addPage(page: Page(word: 300))
+//story.addPage(page: Page(word: 300))
+//
+//story.pages.count
+
+/*:
+ #### Intermediate Swift Video Tutorial Series - raywenderlich.com
+ #### Video 6: Initializers
+ 
+ **Note:** If you're seeing this text as comments rather than nicely-rendered text, select Editor\Show Rendered Markup in the Xcode menu.
+ 
+ */
+
+//: Create a class called Account that has a balance property. Have the balance set to 0. Create a function to withdrawl money from the balance. Make sure the withdrawl amount is greater than 0 and the amount is less than the balance.
+
+//: Create a subclass called SavingsAccount and override withdrawl(). In this method, make sure that the withdrawn amount is greater than 10.
+
+
+
+class Account {
+    var balance = 0
+    
+    func withdrawl(amount : Int){
+        if amount > balance{
+            print("You do not have enough funds")
+        }
+        else{
+            balance = balance - amount
+            print("Your Balance is: \(balance)")
+        }
+    }
+}
+
+var account = Account()
+account.balance = 100
+
+account.withdrawl(amount: 10)
+account.withdrawl(amount: 100)
+
+class SavingsAccount : Account {
+    override func withdrawl(amount: Int) {
+        if amount > 10{
+            super.withdrawl(amount: amount)
+        }
+        else{
+            print("You must withdrawl more then $10")
+        }
+    }
+}
+
+
+var savingsAccount = SavingsAccount()
+savingsAccount.balance = 1000
+
+savingsAccount.withdrawl(amount: 3)
 
 
 
