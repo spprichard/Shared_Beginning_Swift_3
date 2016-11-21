@@ -1,6 +1,6 @@
 ////: Playground - noun: a place where people can play
 //
-//import UIKit
+import UIKit
 //
 ///* Intermediate Swift */
 //
@@ -224,4 +224,23 @@
 ////// Classes //////
 /////////////////////
 
+class Movie{
+    var title = ""
+    var runningTime = 0
+}
 
+var adventureMovie = Movie()
+adventureMovie.title = "Raiders of the Lost Arch"
+adventureMovie.runningTime = 90
+
+var sciencFictionMovie = adventureMovie
+
+sciencFictionMovie.title = "2001"
+print("Adventure Title: \(adventureMovie.title) ")
+print("Sciecne Title: \(sciencFictionMovie.title)")
+
+print(adventureMovie === sciencFictionMovie)
+
+sciencFictionMovie = Movie()
+sciencFictionMovie.title = "The Martian"
+print(adventureMovie === sciencFictionMovie)
