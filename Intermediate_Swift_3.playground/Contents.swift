@@ -108,60 +108,60 @@
  **Note:** If you're seeing this text as comments rather than nicely-rendered text, select Editor\Show Rendered Markup in the Xcode menu.
  */
 
-//: Create a T-shirt struct that has size, color and material options. The size prices go from 3, 5, 7. The colors range from red, blue, and white. It should range from 2, 3, and 1. Finally, for material options, choose regular or organic. It should be 5 or 10. Print out the result in calculatePrice()
-struct tShirt {
-    var size : Character
-    var color : String
-    var material : String
-    
-    func calcPrice() -> Int {
-        var value = 0
-        
-        switch size {
-        case "S":
-            value += 3
-        case "M":
-            value += 5
-        case "L":
-            value += 7
-        default:
-            ()
-        }
-        
-        switch color {
-        case "Red":
-            value += 2
-        case "Blue":
-            value += 3
-        case "White":
-            value += 1
-        default:
-            ()
-        }
-        
-        switch material {
-        case "Regular":
-            value += 5
-        case "Organic":
-            value += 10
-        default:
-            ()
-        }
-        
-        return value
-    }
-    
-}
-
-
-//: Here's an example of creating a struct:
-//: var tshirt = TShirt(size: "M", color: "red", material: "organic")
-var someShirt = tShirt(size: "L", color: "Red", material: "Organic")
-someShirt.calcPrice()
-
-
-var anotherShirt = tShirt(size: "L", color: "Blue", material: "Organic")
-anotherShirt.calcPrice()
+////: Create a T-shirt struct that has size, color and material options. The size prices go from 3, 5, 7. The colors range from red, blue, and white. It should range from 2, 3, and 1. Finally, for material options, choose regular or organic. It should be 5 or 10. Print out the result in calculatePrice()
+//struct tShirt {
+//    var size : Character
+//    var color : String
+//    var material : String
+//    
+//    func calcPrice() -> Int {
+//        var value = 0
+//        
+//        switch size {
+//        case "S":
+//            value += 3
+//        case "M":
+//            value += 5
+//        case "L":
+//            value += 7
+//        default:
+//            ()
+//        }
+//        
+//        switch color {
+//        case "Red":
+//            value += 2
+//        case "Blue":
+//            value += 3
+//        case "White":
+//            value += 1
+//        default:
+//            ()
+//        }
+//        
+//        switch material {
+//        case "Regular":
+//            value += 5
+//        case "Organic":
+//            value += 10
+//        default:
+//            ()
+//        }
+//        
+//        return value
+//    }
+//    
+//}
+//
+//
+////: Here's an example of creating a struct:
+////: var tshirt = TShirt(size: "M", color: "red", material: "organic")
+//var someShirt = tShirt(size: "L", color: "Red", material: "Organic")
+//someShirt.calcPrice()
+//
+//
+//var anotherShirt = tShirt(size: "L", color: "Blue", material: "Organic")
+//anotherShirt.calcPrice()
 
 
 
@@ -172,51 +172,56 @@ anotherShirt.calcPrice()
 /////////////////////
 
 
-struct Book {
-    var title : String
-    var isPublished : Bool
-    
-}
+//struct Book {
+//    var title : String
+//    var isPublished : Bool
+//    
+//}
+//
+//struct Author {
+//    var firstName : String
+//    var lastName : String
+//    var booksWritten : [Book] = []
+//    var booksBeingWritten : [Book] = []
+//    var books : [Book] {
+//        get {
+//            return booksWritten
+//        }
+//    }
+//    
+//    var totalBooks : Int {
+//        return booksBeingWritten.count + booksWritten.count
+//    }
+//    
+//    mutating func addBook(aBook : Book) {
+//        if aBook.isPublished {
+//            booksWritten.append(aBook)
+//        }
+//        else{
+//            booksBeingWritten.append(aBook)
+//        }
+//    }
+//    
+//}
+//
+//var abook = Book(title: "The Stand", isPublished: true)
+//abook.title
+//
+//var writer = Author(firstName: "Stephen", lastName: "King", booksWritten : [abook], booksBeingWritten : [])
+//writer.totalBooks
+//
+//let anotherBook = Book(title: "The Gungslinger", isPublished: true)
+//
+//writer.addBook(aBook: anotherBook)
+//
+//var someBook = Book(title: "Untitled Prject", isPublished: false)
+//writer.addBook(aBook: someBook)
+//print(writer.totalBooks)
 
-struct Author {
-    var firstName : String
-    var lastName : String
-    var booksWritten : [Book] = []
-    var booksBeingWritten : [Book] = []
-    var books : [Book] {
-        get {
-            return booksWritten
-        }
-    }
-    
-    var totalBooks : Int {
-        return booksBeingWritten.count + booksWritten.count
-    }
-    
-    mutating func addBook(aBook : Book) {
-        if aBook.isPublished {
-            booksWritten.append(aBook)
-        }
-        else{
-            booksBeingWritten.append(aBook)
-        }
-    }
-    
-}
 
-var abook = Book(title: "The Stand", isPublished: true)
-abook.title
 
-var writer = Author(firstName: "Stephen", lastName: "King", booksWritten : [abook], booksBeingWritten : [])
-writer.totalBooks
-
-let anotherBook = Book(title: "The Gungslinger", isPublished: true)
-
-writer.addBook(aBook: anotherBook)
-
-var someBook = Book(title: "Untitled Prject", isPublished: false)
-writer.addBook(aBook: someBook)
-print(writer.totalBooks)
-
+/////////////////////
+////// Classes //////
+/////////////////////
 
 
