@@ -224,23 +224,83 @@ import UIKit
 ////// Classes //////
 /////////////////////
 
-class Movie{
-    var title = ""
-    var runningTime = 0
+//class Movie{
+//    var title = ""
+//    var runningTime = 0
+//}
+//
+//var adventureMovie = Movie()
+//adventureMovie.title = "Raiders of the Lost Arch"
+//adventureMovie.runningTime = 90
+//
+//var sciencFictionMovie = adventureMovie
+//
+//sciencFictionMovie.title = "2001"
+//print("Adventure Title: \(adventureMovie.title) ")
+//print("Sciecne Title: \(sciencFictionMovie.title)")
+//
+//print(adventureMovie === sciencFictionMovie)
+//
+//sciencFictionMovie = Movie()
+//sciencFictionMovie.title = "The Martian"
+//print(adventureMovie === sciencFictionMovie)
+
+
+
+/*:
+ #### Intermediate Swift Video Tutorial Series - raywenderlich.com
+ #### Video 5: Classes
+ 
+ **Note:** If you're seeing this text as comments rather than nicely-rendered text, select Editor\Show Rendered Markup in the Xcode menu.
+ 
+ Make the following objects and determine whether they are structs or classes. For the properties, use properties unless noted below.
+ 
+ TShirt: size, color
+ Address: street, city, state, zipCode
+ User: firstName, lastName, address (Address object)
+ ShoppingCart: shirts (array of TShirt), User (user object)
+ 
+ */
+
+struct Tshirt {
+    var size = ""
+    var color = ""
 }
 
-var adventureMovie = Movie()
-adventureMovie.title = "Raiders of the Lost Arch"
-adventureMovie.runningTime = 90
+struct Address {
+    var street = ""
+    var city = ""
+    var zipCode = ""
+    
+}
 
-var sciencFictionMovie = adventureMovie
 
-sciencFictionMovie.title = "2001"
-print("Adventure Title: \(adventureMovie.title) ")
-print("Sciecne Title: \(sciencFictionMovie.title)")
+//class ShoppingCart {
+//    var shirts : [Tshirt]
+//    var user : User
+////    init() {
+////        //var shirts = [Tshirt]()
+////        //var user = User()
+////    }
+//}
+class User {
+    var firstName = ""
+    var lastNmae = ""
+    var usersAddress = Address()
+}
 
-print(adventureMovie === sciencFictionMovie)
+//Solution:
+//
+//- TShirt: A TShirt can be thought of as a value, because it doesn't represent a real shirt, only a description of a shirt. For instance, a TShirt would represent "a large green shirt order" and not "an actual large green shirt". For this reason, TShirt can be a struct instead of a class.
+//- User: A User represents a real person. This means every user is unique so User is best implemented as a class.
+//- Address: Addresses group multiple values together and two addresses can be considered equal if they hold the same values. This means Address works best as a value type (struct).
+//- ShoppingCart: The ShoppingCart is a bit tricker. While it could be argued that it could be done as a value type, it's best to think of the real world semantics you are modeling. If you add an item to a shopping cart, would you expect to get a new shopping cart? Or put the new item in your existing cart? By using a class, the reference semantics help model real world behaviors. Using a class also makes it easier to share a single ShoppingCart object between multiple components of your application (shopping, ordering, invoicing, ...).
 
-sciencFictionMovie = Movie()
-sciencFictionMovie.title = "The Martian"
-print(adventureMovie === sciencFictionMovie)
+
+
+
+
+
+
+
+
