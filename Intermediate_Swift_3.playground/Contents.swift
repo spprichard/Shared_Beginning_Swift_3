@@ -350,43 +350,75 @@ import UIKit
 //: Create a subclass called SavingsAccount and override withdrawl(). In this method, make sure that the withdrawn amount is greater than 10.
 
 
+//
+//class Account {
+//    var balance = 0
+//    
+//    func withdrawl(amount : Int){
+//        if amount > balance{
+//            print("You do not have enough funds")
+//        }
+//        else{
+//            balance = balance - amount
+//            print("Your Balance is: \(balance)")
+//        }
+//    }
+//}
+//
+//var account = Account()
+//account.balance = 100
+//
+//account.withdrawl(amount: 10)
+//account.withdrawl(amount: 100)
+//
+//class SavingsAccount : Account {
+//    override func withdrawl(amount: Int) {
+//        if amount > 10{
+//            super.withdrawl(amount: amount)
+//        }
+//        else{
+//            print("You must withdrawl more then $10")
+//        }
+//    }
+//}
+//
+//
+//var savingsAccount = SavingsAccount()
+//savingsAccount.balance = 1000
+//
+//savingsAccount.withdrawl(amount: 3)
 
-class Account {
-    var balance = 0
+
+
+/////////////////////
+//// Initializers ///
+/////////////////////
+
+
+/*:
+ #### Intermediate Swift Video Tutorial Series - raywenderlich.com
+ #### Video 7: Initializers
+ 
+ **Note:** If you're seeing this text as comments rather than nicely-rendered text, select Editor\Show Rendered Markup in the Xcode menu.
+ 
+ */
+
+//: Create a story class that contains two string properties: name and a writer. Provide an a init() that sets both properties
+
+
+//: Create a new Movie class that is a sublcass of the story class. Give it a new string propery called directory. Create a init that sets the director, name, and writer properties.
+
     
-    func withdrawl(amount : Int){
-        if amount > balance{
-            print("You do not have enough funds")
-        }
-        else{
-            balance = balance - amount
-            print("Your Balance is: \(balance)")
-        }
-    }
-}
-
-var account = Account()
-account.balance = 100
-
-account.withdrawl(amount: 10)
-account.withdrawl(amount: 100)
-
-class SavingsAccount : Account {
-    override func withdrawl(amount: Int) {
-        if amount > 10{
-            super.withdrawl(amount: amount)
-        }
-        else{
-            print("You must withdrawl more then $10")
-        }
-    }
-}
+    //: Create a convenience init that takes just a director's name. Set the name to "Unknown Title" and the writer to "Unknown writer"
+    
 
 
-var savingsAccount = SavingsAccount()
-savingsAccount.balance = 1000
 
-savingsAccount.withdrawl(amount: 3)
+
+
+
+
+
 
 
 
